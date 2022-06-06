@@ -76,3 +76,26 @@ const isPalindrome = function(s) {
     
     // console.log(isPalindrome('ab_a')
 }
+
+//3.-------------------------------------------------------------
+{
+    const isPalindrome = function(s) {
+        return (s.replace(/[^a-z0-9]/gi, '').toLowerCase()=== s.replace(/[^a-z0-9]/gi, '').toLowerCase().split("").reverse().join("")) ? true : false
+        };
+}
+
+//4. --------------------------------------------------ASCII
+{
+    const isPalindrome = function(s) {
+        return s
+            .toLowerCase()
+            .split('')
+            .filter((c) => {
+                const code = c.charCodeAt(0);
+                return (code >= 97 && code <= 122) || (code >= 48 && code <= 57);
+            })
+            .reduce((res, x, i, str) => {
+                return res && str[i] === str[str.length - 1 - i];
+            }, true);
+    };
+}
