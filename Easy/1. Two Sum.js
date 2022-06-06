@@ -35,7 +35,7 @@ const twoSum = function(nums, target) {
         }
     }  
   };
-  console.log(twoSum([3,7,5,2,12,18,15,11,7],14))
+//   console.log(twoSum([3,7,5,2,12,18,15,11,7],14))
 }
 
 //-------------HashMap
@@ -50,6 +50,6 @@ const twoSum = function(nums, target) {
             map[item]= i;
         }
     };
-    console.log(twoSum([3,7,5,2,12,18,15,11,7],14))
+    // console.log(twoSum([3,7,5,2,12,18,15,11,7],14))
 
 }
