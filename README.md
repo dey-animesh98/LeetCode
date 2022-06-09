@@ -15,3 +15,12 @@ https://medium.com/free-code-camp/introduction-to-mongoose-for-mongodb-d2a7aa593
 https://medium.com/dev-genius/what-http-request-body-looks-like-before-middleware-in-nodejs-express-117ab9c63701
 https://medium.com/edureka/expressjs-tutorial-795ad6e65ab3
 https://medium.com/tensult/basic-concepts-of-node-js-310bb9479fae
+
+
+>>Practice InterView
+https://www.pramp.com/#/
+
+>>
+https://github.com/sayantani11
+https://github.com/dey-animesh98/DSA-Bootcamp-Java
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java
