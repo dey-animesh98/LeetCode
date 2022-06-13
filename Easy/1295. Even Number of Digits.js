@@ -43,12 +43,13 @@ Constraints:
     const findNumbers = function(nums) {
         let count = 0
         for(let digits of nums ){
-            if(Math.floor(Math.log10(digits)+1) % 2 ==0){
+            if(Math.ceil(Math.log10(digits)) % 2 ==0){
                 count++
             }
         }
         return count
     };
+    console.log(findNumbers([555,901,482,1771]))
 }
 //-----3
 {
@@ -78,3 +79,7 @@ function findNumbers(n) {
 }
 
 }
+
+
+console.log(Math.ceil(Math.log10(121212121212)))
+console.log(Math.ceil(Math.log(121212121212)))

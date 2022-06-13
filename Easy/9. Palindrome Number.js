@@ -34,3 +34,19 @@ Constraints:
       return false
     };
 }
+
+{
+  var isPalindrome = function(x) {
+    if(x>=0){
+      let rev = ''
+      let num =x
+      while(num>0){
+        let rem = num % 10
+        rev += rem
+        num = Math.floor(num/10)
+      }
+      return rev == x    //+rev === x ---> is same
+    }
+  return false
+};
+}
