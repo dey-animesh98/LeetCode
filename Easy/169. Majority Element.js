@@ -98,3 +98,8 @@ n == nums.length
     console.log(majorityElement([84, 84, 47, 84, 62, 84, 78, 84, 84, 57,47,84]))
 
 }
+
+for(let key of nums){
+    map[key] =(map[key]|0)+1
+    if(map[key] == 1) return key
+  }
