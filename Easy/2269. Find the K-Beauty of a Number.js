@@ -1,14 +1,5 @@
 /**
  * 2269. Find the K-Beauty of a Number
-Easy
-
-141
-
-7
-
-Add to List
-
-Share
 The k-beauty of an integer num is defined as the number of substrings of num when it is read as a string that meet the following conditions:
 
 It has a length of k.
