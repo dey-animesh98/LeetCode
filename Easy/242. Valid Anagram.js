@@ -27,6 +27,8 @@ s and t consist of lowercase English letters
       return b == c
       };
 }
+
+
 //--Hash map
 {
     const isAnagram = function(s, t) {
@@ -40,7 +42,7 @@ s and t consist of lowercase English letters
            }
            return Object.values(hashMap).every(value => !value)
        };
-       console.log(isAnagram("anagram", "nagaram"))
+      //  console.log(isAnagram("anagram", "nagaram"))
     //    console.log(isAnagram("rat", "car"))
 
 }
@@ -58,5 +60,5 @@ s and t consist of lowercase English letters
           }
           return hashMap
     }
-    console.log(countLetters('javascript'))
+    // console.log(countLetters('javascript'))
 }
