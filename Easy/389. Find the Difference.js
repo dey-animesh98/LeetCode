@@ -41,13 +41,18 @@ s and t consist of lowercase English letters.
 
 {
     const findTheDifference = function (s, t) {
-        let mpp = new Map();
-        for (let char of t) mpp.set(char, mpp.get(char) + 1 || 1);
-        for (let char of s) mpp.set(char, mpp.get(char) - 1);
-        for (let it of mpp) if (it[1] === 1) return it[0];
+        let map = new Map();
+        for (let char of t) map.set(char, map.get(char) + 1 || 1);
+        for (let char of s) map.set(char, map.get(char) - 1);
+        for (let key of map) {
+            if (key[1] === 1)
+             return key[0];
+        }
         return "-1";
     };
+    console.log(findTheDifference("abcd", "abcde"))
 }
+
 {
     const findTheDifference = function (s, t) {
         let ans = 0;
@@ -60,7 +65,7 @@ s and t consist of lowercase English letters.
         return String.fromCharCode(ans);
     };
 }
-    //   XOR's codes are ALMOST SAME!! Just slightly change operation symbols:
+//   XOR's codes are ALMOST SAME!! Just slightly change operation symbols:
 
 {
     const findTheDifference = function (s, t) {
@@ -73,4 +78,14 @@ s and t consist of lowercase English letters.
         }
         return String.fromCharCode(ans);
     };
+}
+//Get the key by value in hashmap
+{
+    let obj = new Map()
+   obj.set("a", 1)
+   obj.set("g", 5)
+   obj.set("i", 3)
+   for(let ent of obj){
+    console.log(ent,">",ent[1],">", ent[0])
+   }
 }

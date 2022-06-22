@@ -52,6 +52,26 @@ Could you do it in-place with O(1) extra space?
     
         return nums
     }
-    console.log(rotate([1,2,3,4,5,6,7], 3))
+    // console.log(rotate([1,2,3,4,5,6,7], 3))
 
+}
+
+{
+    const rotate = function(nums, k) {
+        if (nums.length < k) {
+          k = k % nums.length
+        }
+      let start =nums.length-k ,end = nums.length-1
+          while(start<end){
+            let temp = nums[start]
+            nums[start] = nums[end]
+            nums[end]= temp
+            start++
+            end--
+          }
+      console.log(nums)
+      // let newStart = 0, end = nums.length-1
+      // while()
+    }
+    console.log(rotate([1,2,3,4,5,6,7], 3))
 }
