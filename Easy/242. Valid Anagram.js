@@ -20,45 +20,70 @@ Constraints:
 s and t consist of lowercase English letters
  */
 //---
+
 {
-    const isAnagram = function(s, t) {
-        let b= s.split('').sort().join('')
-        let c= t.split('').sort().join('')
-      return b == c
-      };
+  var isAnagram = function (s, t) {
+    let map = new Map()
+    for (let ele of s) {
+      map.set(ele, map.get(ele) + 1 || 1)
+    }
+
+    for (let ele of t) {
+      if (map.has(ele)) {
+        map.set(ele, map.get(ele) - 1)
+        if (map.get(ele) === 0) {
+          map.delete(ele)
+        }
+      } else {
+        map.set(ele, 1)
+      }
+    }
+    return map.size === 0
+  };
 }
+
+
 
 
 //--Hash map
 {
-    const isAnagram = function(s, t) {
-        const hashMap = {};
-           
-           for (let i = 0; i < s.length; i++){
-             hashMap[s[i]] = hashMap[s[i]] ? hashMap[s[i]] + 1 : 1;
-           }
-           for (let j = 0; j < t.length; j++) {
-             hashMap[t[j]] = hashMap[t[j]] ? hashMap[t[j]] - 1 : -1;
-           }
-           return Object.values(hashMap).every(value => !value)
-       };
-      //  console.log(isAnagram("anagram", "nagaram"))
-    //    console.log(isAnagram("rat", "car"))
+  const isAnagram = function (s, t) {
+    const hashMap = {};
+
+    for (let i = 0; i < s.length; i++) {
+      hashMap[s[i]] = hashMap[s[i]] ? hashMap[s[i]] + 1 : 1;
+    }
+    for (let j = 0; j < t.length; j++) {
+      hashMap[t[j]] = hashMap[t[j]] ? hashMap[t[j]] - 1 : -1;
+    }
+    return Object.values(hashMap).every(value => !value)
+  };
+  //  console.log(isAnagram("anagram", "nagaram"))
+  //    console.log(isAnagram("rat", "car"))
 
 }
 //-----Bonus-------//
 //Count of letters in a word using Hash Map
 {
-    const countLetters = function(s) {
-        const hashMap = {};
-        for (let i = 0; i < s.length; i++){
-          if(hashMap[s[i]]){
-            hashMap[s[i]] += 1        //Same code using ternary operator >> hashMap[s[i]] = hashMap[s[i]] ? hashMap[s[i]] + 1 : 1;
-          }else{
-            hashMap[s[i]] = 1
-          }
-          }
-          return hashMap
+  const countLetters = function (s) {
+    const hashMap = {};
+    for (let i = 0; i < s.length; i++) {
+      if (hashMap[s[i]]) {
+        hashMap[s[i]] += 1        //Same code using ternary operator >> hashMap[s[i]] = hashMap[s[i]] ? hashMap[s[i]] + 1 : 1;
+      } else {
+        hashMap[s[i]] = 1
+      }
     }
-    // console.log(countLetters('javascript'))
+    return hashMap
+  }
+  // console.log(countLetters('javascript'))
+}
+
+
+{
+  const isAnagram = function (s, t) {
+    let b = s.split('').sort().join('')
+    let c = t.split('').sort().join('')
+    return b == c
+  };
 }

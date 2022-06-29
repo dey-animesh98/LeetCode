@@ -23,7 +23,22 @@ nums is sorted in non-decreasing order.
  */
 //--One liner O(n)
 {
-    const sortedSquares = function(nums) {
-        return nums.map(e=> Math.abs(e*e)).sort((a,b)=>a-b)
+    const sortedSquares = function (nums) {
+        return nums.map(e => Math.abs(e * e)).sort((a, b) => a - b)
     };
+}
+
+
+{//Solution is running but in llarge input not working
+    function pow(arr) {
+        let temp = []
+        if (arr.length === 0) {
+            return []
+        }
+        let s = arr[0] * arr[0]
+        temp.push(s)
+        return temp.concat(pow(arr.slice(1))).sort((a, b) => a - b)
+    }
+
+    console.log(pow([2, 6, 4]))
 }
