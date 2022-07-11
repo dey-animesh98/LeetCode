@@ -54,20 +54,25 @@ There are no duplicate roads.
             map.set(ele[0], map.get(ele[0]) + 1 || 1)
             map.set(ele[1], map.get(ele[1]) + 1 || 1)
         }
+        console.log(map)
         let valueMap = new Map()
-        let valueMapArr = [...map.entries()].sort((a, b) => b[1] - a[1])
+        let valueMapArr = [...map].sort((a, b) => b[1] - a[1])
+        console.log(valueMapArr)
 
         for (let i = 0; i < valueMapArr.length; i++) {
             valueMap.set(valueMapArr[i][0], n--)
         }
+        console.log(valueMap)
+
         let sum = 0
         for (let j = 0; j < roads.length; j++) {
             sum += valueMap.get(roads[j][0]) + valueMap.get(roads[j][1])
         }
         return sum
     };
-    console.log(maximumImportance(5,[[0,1],[1,2],[2,3],[0,2],[1,3],[2,4]]))
+    console.log(maximumImportance(5, [[0, 1], [1, 2], [2, 3], [0, 2], [1, 3], [2, 4]]))
 }
+
 // const contacts = new Map()
 // contacts.set('Jessie', {phone: "213-555-1234", address: "123 N 1st Ave"})
 // console.log(contacts)
