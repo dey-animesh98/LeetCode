@@ -49,7 +49,7 @@ Constraints:
 
         for (let j = k; j < nums.length; j++) {
 
-            while (que.length > 0 && nums[que[que.length - 1]] <= nums[j]) {
+            while (que.length > 0 &&  nums[j] >=nums[que[que.length - 1]] ) {
                 que.pop()
             }
             if (que.length > 0 && que[0] <= j - k) {
