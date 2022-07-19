@@ -42,3 +42,8 @@ The list is guaranteed to be sorted in ascending order.
         return head
     };
 }
+
+// let f = Math.floor(53/26)
+// let s = 53-26*f
+
+// console.log(f+""+s)

@@ -29,17 +29,79 @@ All the stings of list1 are unique.
 All the stings of list2 are unique
  */
 //--
+{// 136/135 test cases passed
+  var findRestaurant = function (list1, list2) {
+
+    let map = new Map()
+    for (let ele of list1) {
+      map.set(ele, map.get(ele))
+    }
+    for (let ele of list2) {
+      map.set(ele,1)
+    }
+    let str = [], max = 0
+    for (let pairs of map) {
+      if (pairs[1] > max) {
+        max = pairs[1]
+        str = []
+        str.push(pairs[0])
+      } else if (pairs[1] === max) {
+        str.push(pairs[0])
+      }
+    }
+
+    let minIdx = 2000, minEle = []
+    if (str.length === 1) return str
+    else {
+      for (let ele of str) {
+        let idx1 = list1.indexOf(ele)
+        let idx2 = list2.indexOf(ele)
+        let sum = idx1 + idx2
+        if (sum <= minIdx) {
+          minIdx = sum
+          minEle.push(ele)
+        }
+      }
+    }
+    return minEle
+  };
+
+  /** Failed Case
+   * Input
+["Shogun","Piatti","Tapioca Express","Burger King","KFC"]
+["Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"]
+Output
+["Shogun","Piatti"]
+Expected
+["Piatti"]
+   */
+}
+
 {
-    var findRestaurant = function(list1, list2) {
-        let map = {}, res = []
-        for(let i=0; i<list1.length; i++){
-          map[list1[i]] = (map[list1[i]] | 1)
+  var findRestaurant = function (list1, list2) {
+    const map = new Map();
+
+    let min = null;
+    let result = [];
+
+    for (let i = 0; i < list1.length; i++) map.set(list1[i], i);
+    for (let i = 0; i < list2.length; i++) {
+      if (map.has(list2[i])) {
+        const diff = i + map.get(list2[i]);
+
+        if (min === null) {
+          min = diff;
+          result.push(list2[i])
+        } else if (min > diff) {
+          min = diff;
+          result = [];
+          result.push(list2[i]);
+        } else if (min === diff) {
+          result.push(list2[i])
         }
-         for(let j=0; j<list2.length; j++){
-      
-          if(map.hasOwnProperty(list2[j]))
-            return [list2[j]]// need changes
-        }
-          
-      };
+      }
+    }
+
+    return result;
+  };
 }
