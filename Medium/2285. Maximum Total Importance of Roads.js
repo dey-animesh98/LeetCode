@@ -54,7 +54,7 @@ There are no duplicate roads.
             map.set(ele[0], map.get(ele[0]) + 1 || 1)
             map.set(ele[1], map.get(ele[1]) + 1 || 1)
         }
-        console.log(map)
+        // console.log(map)
         let valueMap = new Map()
         let valueMapArr = [...map].sort((a, b) => b[1] - a[1])
         console.log(valueMapArr)

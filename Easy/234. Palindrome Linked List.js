@@ -54,12 +54,11 @@ Follow up: Could you do it in O(n) time and O(1) space?
         while (len) {
             len--
             if (mid.val !== startPointer.val) return false
-
             mid = mid.next
             startPointer = startPointer.next
         }
 
         return true
 
-    };
+    }
 }

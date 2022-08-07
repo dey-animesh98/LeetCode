@@ -53,3 +53,5 @@ const twoSum = function(nums, target) {
     // console.log(twoSum([3,7,5,2,12,18,15,11,7],14))
 
 }
+
+

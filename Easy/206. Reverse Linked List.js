@@ -45,3 +45,15 @@ Follow up: A linked list can be reversed either iteratively or recursively. Coul
 
     };
 }
+
+{
+    var reverseList = function (head) {
+        if (!head?.next) return head;
+
+        const node = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return node;
+    };
+}
