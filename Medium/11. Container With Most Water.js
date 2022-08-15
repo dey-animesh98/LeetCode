@@ -27,6 +27,20 @@ n == height.length
 2 <= n <= 105
 0 <= height[i] <= 104
  */
+//--\
+{
+    var maxArea = function (height) {
+        let left = 0, right = height.length - 1, res = 0
+
+        while (left < right) {
+            res = Math.max(res, Math.min(height[left], height[right]) * (right - left))
+
+            height[left] < height[right] ? left++ : right--
+        }
+        return res
+    };
+}
+
 
 //-
 {
