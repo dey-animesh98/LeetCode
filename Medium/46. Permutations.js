@@ -69,3 +69,27 @@ function permute2(index, nums, ans) {
 }
 let ans = []
 console.log(permute2(0, [1, 2, 3], ans))
+
+
+{
+    var permute = function (nums) {
+        let res = []
+        const dfs = (i, nums) => {
+            //base case 
+            if (i === nums.length) {
+                res.push(nums.slice())
+                return
+            }
+
+            //recu
+            for (let j = i; j < nums.length; j++) {
+                [nums[i], nums[j]] = [nums[j], nums[i]]
+                dfs(i + 1, nums);
+                [nums[i], nums[j]] = [nums[j], nums[i]]
+            }
+        }
+
+        dfs(0, nums)
+        return res
+    }
+}
