@@ -38,11 +38,65 @@ nums2.length == n
  */
 
 //--
+
+
 {
-    var merge = function(nums1, m, nums2, n) {
-        for(let i = m; i < nums1.length; i++) { 
-            nums1[i] = nums2[i-m];   
+    const merge = function (nums1, m, nums2, n) {
+        let f = m - 1, s = n - 1, i = m + n - 1
+
+        while (s >= 0) {
+            let fVal = nums1[f]
+            let sVal = nums2[s]
+            if (fVal > sVal) {
+                nums1[i] = fVal
+                i--
+                f--
+            } else {
+                nums1[i] = sVal
+                i--
+                s--
+            }
         }
-        nums1.sort((a,b) => a-b);
+        return nums1
+    };
+    let nums1 = [1,2, 3,4]
+    let nums2 = [2, 5, 6]
+    let m = 4, n = 3
+    console.log(merge(nums1, m, nums2, n))
+}
+
+
+{
+    const merge1 = function (nums1, m, nums2, n) {
+        let i = m - 1, j = n - 1, k = m + n - 1
+
+        while (j >= 0) {
+
+            if (nums1[i] < nums2[j]) {
+                nums1[k] = nums2[j]
+                j--
+                k--
+            } else {
+                nums1[k] = nums1[i]
+                i--
+                k--
+            }
+        }
+        return nums1
+    };
+
+    let nums1 = [1, 3,4]
+    let nums2 = [2, 5, 6]
+    let m = 3, n = 3
+    console.log(merge1(nums1, m, nums2, n))
+}
+
+
+{
+    const merge = function (nums1, m, nums2, n) {
+        for (let i = m; i < nums1.length; i++) {
+            nums1[i] = nums2[i - m];
+        }
+        nums1.sort((a, b) => a - b);
     };
 }
